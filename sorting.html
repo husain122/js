@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> Assending sort</title>
+   <style type="text/css">
+    body 
+    {
+        font-family: Arial, sans-serif;
+       text-align: center;
+        margin: 50px;
+        background-color: #f4f4f4;
+    }
+    input.button
+    {
+       
+        padding: 10px;
+        margin: 10px;
+    }
+    #output
+    {
+        font-size: 20px;
+        color: green;
+        padding: 10px;
+        margin: 10px;
+    }
+   
+
+
+   </style>
+</head>
+<body>
+    <h2>Enter Numbers</h2>
+    <input type="text" id="numbers" name="numbers" placeholder="e.g: 10,20,57,40" />
+    <button onclick="sortNumbers()">Submit</button>
+    <div id="output"></div>
+    <script>
+        function sortNumbers()
+        {
+            let numbersInput = document.getElementById('numbers').value;
+            let numbersArray = numbersInput.split(',').map(num => parseFloat(num.trim()));
+            let sortedNumbers = numbersArray.filter(num => !isNaN(num)).sort((a, b) => a - b);
+            document.getElementById('output').innerHTML = 'The sorted numbers are: ' + sortedNumbers.join(', ');
+           
+        }                                                       
+
+           
+    </script>
+</body>
+</html>

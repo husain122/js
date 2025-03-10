@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Result Sheet</title>
+    <style>
+        body {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 70vh;
+            margin: 0;
+        }
+        h1 {
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <h1>Result Grade</h1>
+    <input type="text" id="marks" placeholder="Enter your marks">
+    <button onclick="checkGrade()">Check Grade</button> 
+
+    <script>
+    function checkGrade() {
+        var marks = parseInt(document.getElementById("marks").value);
+        var grade;
+        var color;
+
+        switch (true) {
+            case (marks >= 80):
+                grade = "A+";
+                color = "green";
+                break;
+            case (marks >= 70):
+                grade = "A";
+                color = "blue";
+                break;
+            case (marks >= 60):
+                grade = "B";
+                color = "black";
+                break;
+            default:
+                grade = "F";
+                color = "red";
+        }
+
+        document.body.innerHTML = `<h1 style="color: ${color}; text-align: center;">${grade}</h1>`;
+    }
+    </script>
+    
+</body>
+</html>
